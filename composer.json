@@ -1,0 +1,37 @@
+{
+  "name" : "pixeldev/sulu-companybundle",
+  "type": "suku-bundle",
+  "description": "Company tools for Sulu",
+  "keywords": [
+    "sulu",
+    "suluCms"
+  ],
+  "homepage": "https://github.com/Pixel-Developpement/sulu-companybundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pixel Developpement"
+    }
+  ],
+  "require": {
+    "php": "^7.4 || ^8.0",
+    "sulu/sulu": "^2.4",
+    "symfony/config": "^4.4 || ^5.0",
+    "symfony/dependency-injection": "^4.4 || ^5.0",
+    "symfony/framework-bundle": "^4.4 || ^5.0",
+    "symfony/http-foundation": "^4.4 || ^5.0",
+    "symfony/http-kernel": "^4.4 || ^5.0"
+  },
+  "require-dev": {
+  },
+  "scripts": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Pixel\\SocialBundle\\": ""
+    }
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
