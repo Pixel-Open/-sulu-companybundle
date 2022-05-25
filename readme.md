@@ -1,4 +1,4 @@
-# Sulu social bundle
+# Sulu Company bundle
 
 
 ## Requirements
@@ -17,7 +17,7 @@ project:
 
 ```bash
 
-composer require pixeldev/sulu-socialbundle --with-all-dependencies
+composer require pixeldev/sulu-companybundle --with-all-dependencies
 
 ```
 
@@ -28,7 +28,7 @@ Enable the bundle by adding it to the list of registered bundles in the `config/
  ```php
  return [
      /* ... */
-     Pixel\SocialBundle\SocialBundle::class => ['all' => true],
+     Pixel\CompanyBundle\CompanyBundle::class => ['all' => true],
  ];
  ```
 
@@ -41,10 +41,10 @@ bin/console do:sch:up --force
 
 Define the Admin Api Route in `routes_admin.yaml`
 ```yaml
-social.settings_api:
+company.setting_api:
   type: rest
   prefix: /admin/api
-  resource: pixel_social.settings_route_controller
-  name_prefix: social.
+  resource: pixel_company.settings_route_controller
+  name_prefix: company.
 ```
 
