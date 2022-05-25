@@ -1,6 +1,6 @@
 {
   "name" : "pixeldev/sulu-companybundle",
-  "type": "suku-bundle",
+  "type": "sulu-bundle",
   "description": "Company tools for Sulu",
   "keywords": [
     "sulu",
@@ -28,7 +28,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Pixel\\SocialBundle\\": ""
+      "Pixel\\CompanyBundle\\": ""
     }
   },
   "config": {
