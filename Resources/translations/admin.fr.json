@@ -1,0 +1,20 @@
+{
+  "company.settings": "Gestion de la société",
+  "company_settings.name": "Nom",
+  "company_settings.email": "Email",
+  "company_settings.phoneNumber": "Numéro de téléphone",
+  "company_settings.address": "Adresse",
+  "company_settings.placeId": "Place ID",
+  "company_settings.openingHours": "Horaires d'ouverture",
+  "company_settings.addOpeningHour": "Ajouter un horaire",
+  "company_settings.day": "Jour",
+  "company_settings.monday": "Lundi",
+  "company_settings.tuesday": "Mardi",
+  "company_settings.wednesday": "Mercredi",
+  "company_settings.thrusday": "Jeudi",
+  "company_settings.friday": "Vendredi",
+  "company_settings.saturday": "Samedi",
+  "company_settings.sunday": "Dimanche",
+  "company_settings.openHour": "Heure d'ouverture",
+  "company_settings.closeHour": "Heure de fermeture"
+}
