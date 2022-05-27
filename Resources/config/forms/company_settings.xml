@@ -10,14 +10,19 @@
                 <title>company_settings.name</title>
             </meta>
         </property>
-        <property name="email" type="text_line" colspan="6">
+        <property name="email" type="text_line" colspan="4">
             <meta>
                 <title>company_settings.email</title>
             </meta>
         </property>
-        <property name="phoneNumber" type="text_line" colspan="6">
+        <property name="phoneNumber" type="text_line" colspan="4">
             <meta>
                 <title>company_settings.phoneNumber</title>
+            </meta>
+        </property>
+        <property name="mobilePhoneNumber" type="text_line" colspan="4">
+            <meta>
+                <title>company_settings.mobilePhoneNumber</title>
             </meta>
         </property>
         <property name="address" type="location">
