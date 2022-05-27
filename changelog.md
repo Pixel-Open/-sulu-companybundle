@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2 (27/05/2022)
+
++ Ajout des champs téléphone mobile et google my business
+
 ## 1.0.1 (25/05/2022)
 
 + Maj du readme

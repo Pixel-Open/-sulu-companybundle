@@ -47,6 +47,12 @@ class Setting implements AuditableInterface
     private ?string $phoneNumber = null;
 
     /**
+     * @ORM\Column(type="string", nullable=true)
+     * @Serializer\Expose()
+     */
+    private ?string $mobilePhoneNumber = null;
+
+    /**
      * @ORM\Column(type="json", nullable=true)
      * @Serializer\Expose()
      */
@@ -63,6 +69,12 @@ class Setting implements AuditableInterface
      * @Serializer\Expose()
      */
     private ?array $openingHours = null;
+
+    /**
+     * @ORM\Column(type="json", nullable=true)
+     * @Serializer\Expose()
+     */
+    private ?array $googleMyBusiness = null;
 
     /**
      * @return int|null
@@ -121,6 +133,22 @@ class Setting implements AuditableInterface
     }
 
     /**
+     * @return string|null
+     */
+    public function getMobilePhoneNumber(): ?string
+    {
+        return $this->mobilePhoneNumber;
+    }
+
+    /**
+     * @param string|null $mobilePhoneNumber
+     */
+    public function setMobilePhoneNumber(?string $mobilePhoneNumber): void
+    {
+        $this->mobilePhoneNumber = $mobilePhoneNumber;
+    }
+
+    /**
      * @return array
      */
     public function getAddress(): array
@@ -163,8 +191,24 @@ class Setting implements AuditableInterface
     /**
      * @param array $openingHours
      */
-    public function setOpeningHours(array $openingHours): void
+    public function setOpeningHours(?array $openingHours): void
     {
         $this->openingHours = $openingHours;
+    }
+
+    /**
+     * @return array|null
+     */
+    public function getGoogleMyBusiness(): ?array
+    {
+        return $this->googleMyBusiness;
+    }
+
+    /**
+     * @param array|null $googleMyBusiness
+     */
+    public function setGoogleMyBusiness(?array $googleMyBusiness): void
+    {
+        $this->googleMyBusiness = $googleMyBusiness;
     }
 }

@@ -55,6 +55,7 @@ class SettingController extends AbstractRestController implements ClassResourceI
         $name = $data['name'] ?? null;
         $email = $data['email'] ?? null;
         $phoneNumber = $data['phoneNumber'] ?? null;
+        $mobilePhoneNumber = $data['mobilePhoneNumber'] ?? null;
         $address = $data['address'] ?? null;
         $placeId = $data['placeId'] ?? null;
         $openingHours = $data['openingHours'] ?? null;
@@ -62,6 +63,7 @@ class SettingController extends AbstractRestController implements ClassResourceI
         $entity->setName($name);
         $entity->setEmail($email);
         $entity->setPhoneNumber($phoneNumber);
+        $entity->setMobilePhoneNumber($mobilePhoneNumber);
         $entity->setAddress($address);
         $entity->setPlaceId($placeId);
         $entity->setOpeningHours($openingHours);

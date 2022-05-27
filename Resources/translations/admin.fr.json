@@ -3,6 +3,7 @@
   "company_settings.name": "Nom",
   "company_settings.email": "Email",
   "company_settings.phoneNumber": "Numéro de téléphone",
+  "company_settings.mobilePhoneNumber": "Numéro de téléphone portable",
   "company_settings.address": "Adresse",
   "company_settings.placeId": "Place ID",
   "company_settings.openingHours": "Horaires d'ouverture",
