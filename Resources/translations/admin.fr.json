@@ -6,16 +6,19 @@
   "company_settings.mobilePhoneNumber": "Numéro de téléphone portable",
   "company_settings.address": "Adresse",
   "company_settings.placeId": "Place ID",
+  "company_settings.apiKey": "Clé de l'API",
+  "company_settings.useGoogleHours": "Utiliser les horaires stocker dans Google My Business ?",
   "company_settings.openingHours": "Horaires d'ouverture",
   "company_settings.addOpeningHour": "Ajouter un horaire",
   "company_settings.day": "Jour",
   "company_settings.monday": "Lundi",
   "company_settings.tuesday": "Mardi",
   "company_settings.wednesday": "Mercredi",
-  "company_settings.thrusday": "Jeudi",
+  "company_settings.thursday": "Jeudi",
   "company_settings.friday": "Vendredi",
   "company_settings.saturday": "Samedi",
   "company_settings.sunday": "Dimanche",
   "company_settings.openHour": "Heure d'ouverture",
-  "company_settings.closeHour": "Heure de fermeture"
+  "company_settings.closeHour": "Heure de fermeture",
+  "company_setting.aboutHours": "À propos des horaires"
 }

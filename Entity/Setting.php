@@ -65,6 +65,12 @@ class Setting implements AuditableInterface
     private ?string $placeId = null;
 
     /**
+     * @ORM\Column(type="string", nullable=true)
+     * @Serializer\Expose()
+     */
+    private ?string $apiKey = null;
+
+    /**
      * @ORM\Column(type="json", nullable=true)
      * @Serializer\Expose()
      */
@@ -75,6 +81,18 @@ class Setting implements AuditableInterface
      * @Serializer\Expose()
      */
     private ?array $googleMyBusiness = null;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     * @Serializer\Expose()
+     */
+    private ?bool $useGoogleHours = null;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     * @Serializer\Expose()
+     */
+    private ?string $aboutHours = null;
 
     /**
      * @return int|null
@@ -95,7 +113,7 @@ class Setting implements AuditableInterface
     /**
      * @param string $name
      */
-    public function setName(string $name): void
+    public function setName(?string $name): void
     {
         $this->name = $name;
     }
@@ -111,7 +129,7 @@ class Setting implements AuditableInterface
     /**
      * @param string $email
      */
-    public function setEmail(string $email): void
+    public function setEmail(?string $email): void
     {
         $this->email = $email;
     }
@@ -127,7 +145,7 @@ class Setting implements AuditableInterface
     /**
      * @param string $phoneNumber
      */
-    public function setPhoneNumber(string $phoneNumber): void
+    public function setPhoneNumber(?string $phoneNumber): void
     {
         $this->phoneNumber = $phoneNumber;
     }
@@ -159,7 +177,7 @@ class Setting implements AuditableInterface
     /**
      * @param array $address
      */
-    public function setAddress(array $address): void
+    public function setAddress(?array $address): void
     {
         $this->address = $address;
     }
@@ -178,6 +196,22 @@ class Setting implements AuditableInterface
     public function setPlaceId(?string $placeId): void
     {
         $this->placeId = $placeId;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getApiKey(): ?string
+    {
+        return $this->apiKey;
+    }
+
+    /**
+     * @param string|null $apiKey
+     */
+    public function setApiKey(?string $apiKey): void
+    {
+        $this->apiKey = $apiKey;
     }
 
     /**
@@ -210,5 +244,37 @@ class Setting implements AuditableInterface
     public function setGoogleMyBusiness(?array $googleMyBusiness): void
     {
         $this->googleMyBusiness = $googleMyBusiness;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function getUseGoogleHours(): ?bool
+    {
+        return $this->useGoogleHours;
+    }
+
+    /**
+     * @param bool|null $useGoogleHours
+     */
+    public function setUseGoogleHours(?bool $useGoogleHours): void
+    {
+        $this->useGoogleHours = $useGoogleHours;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getAboutHours(): ?string
+    {
+        return $this->aboutHours;
+    }
+
+    /**
+     * @param string|null $aboutHours
+     */
+    public function setAboutHours(?string $aboutHours): void
+    {
+        $this->aboutHours = $aboutHours;
     }
 }
