@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.4.0 (08/06/2022)
+
++ Ajout de la commande pour la récuparation des horaires via Google MyBusiness
++ Gestion des horaires via twig
+
 ## 1.0.2 (27/05/2022)
 
 + Ajout des champs téléphone mobile et google my business

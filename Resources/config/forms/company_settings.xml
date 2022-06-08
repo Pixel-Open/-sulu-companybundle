@@ -30,12 +30,29 @@
                 <title>company_settings.address</title>
             </meta>
         </property>
-        <property name="placeId" type="text_line">
+        <property name="placeId" type="text_line" colspan="6">
             <meta>
                 <title>company_settings.placeId</title>
+                <info_text>Le "place_id" est un identifiant unique donné par Google qui permet d'identifier un emplacement sur une carte.</info_text>
             </meta>
         </property>
-        <block name="openingHours">
+        <property name="apiKey" type="text_line" colspan="6">
+            <meta>
+                <title>company_settings.apiKey</title>
+                <info_text>La clé de l'API de Google My Business qui permet d'accéder aux informations du compte.</info_text>
+            </meta>
+        </property>
+        <property name="useGoogleHours" type="checkbox">
+            <meta>
+                <title>company_settings.useGoogleHours</title>
+            </meta>
+        </property>
+        <property name="aboutHours" type="text_editor">
+            <meta>
+                <title>company_setting.aboutHours</title>
+            </meta>
+        </property>
+        <block name="openingHours" visibleCondition="useGoogleHours == false OR useGoogleHours == null">
             <meta>
                 <title>company_settings.openingHours</title>
             </meta>
@@ -68,12 +85,12 @@
                                     </param>
                                     <param name="wednesday">
                                         <meta>
-                                            <title>company_settings.monday</title>
+                                            <title>company_settings.wednesday</title>
                                         </meta>
                                     </param>
-                                    <param name="thrusday">
+                                    <param name="thursday">
                                         <meta>
-                                            <title>company_settings.thrusday</title>
+                                            <title>company_settings.thursday</title>
                                         </meta>
                                     </param>
                                     <param name="friday">

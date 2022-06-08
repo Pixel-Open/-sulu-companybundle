@@ -19,6 +19,12 @@
             <tag name="sulu.admin"/>
             <tag name="sulu.context" context="admin"/>
         </service>
+
+        <service id="pixel_company.sync_google_informations_command" class="Pixel\CompanyBundle\Command\SyncGoogleInformationsCommand">
+            <argument type="service" id="doctrine.orm.default_entity_manager" />
+            <argument type="service" id="monolog.http_client"/>
+            <tag name="console.command"/>
+        </service>
     </services>
 
 </container>

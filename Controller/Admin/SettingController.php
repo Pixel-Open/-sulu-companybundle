@@ -58,7 +58,10 @@ class SettingController extends AbstractRestController implements ClassResourceI
         $mobilePhoneNumber = $data['mobilePhoneNumber'] ?? null;
         $address = $data['address'] ?? null;
         $placeId = $data['placeId'] ?? null;
+        $apiKey = $data['apiKey'] ?? null;
         $openingHours = $data['openingHours'] ?? null;
+        $useGoogleHours = $data['useGoogleHours'] ?? null;
+        $aboutHours = $data['aboutHours'] ?? null;
 
         $entity->setName($name);
         $entity->setEmail($email);
@@ -66,7 +69,10 @@ class SettingController extends AbstractRestController implements ClassResourceI
         $entity->setMobilePhoneNumber($mobilePhoneNumber);
         $entity->setAddress($address);
         $entity->setPlaceId($placeId);
+        $entity->setApiKey($apiKey);
         $entity->setOpeningHours($openingHours);
+        $entity->setUseGoogleHours($useGoogleHours);
+        $entity->setAboutHours($aboutHours);
     }
 
     public function getSecurityContext(): string
