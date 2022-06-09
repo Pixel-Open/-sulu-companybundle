@@ -42,7 +42,7 @@ class SyncGoogleInformationsCommand extends Command
             $response = $this->client->request("GET", "https://maps.googleapis.com/maps/api/place/details/json", [
                 "query" => [
                     "placeid" => $placeId,
-                    "fields" => "rating,opening_hours",
+                    "fields" => "rating,opening_hours,user_ratings_total",
                     "key" => $apiKey
                 ]
             ]);

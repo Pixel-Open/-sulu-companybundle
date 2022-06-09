@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.4.1 (09/06/2022)
+
++ Ajout du nombre total pour les avis Google
+
 ## 2.4.0 (08/06/2022)
 
 + Ajout de la commande pour la récuparation des horaires via Google MyBusiness

@@ -24,7 +24,8 @@ class SettingsExtension extends AbstractExtension
     {
         return [
             new TwigFunction("company_settings", [$this, "companySettings"]),
-            new TwigFunction("get_company_hours", [$this, "getCompanyHours"], ["is_safe" => ["html"]])
+            new TwigFunction("get_company_hours", [$this, "getCompanyHours"], ["is_safe" => ["html"]]),
+            new TwigFunction("get_google_review", [$this, "getGoogleReview"])
         ];
     }
 
@@ -63,5 +64,18 @@ class SettingsExtension extends AbstractExtension
             }
         }
         return $this->environment->render("@Company/twig/hours.html.twig", ["openingHours" => $openingHours]);
+    }
+
+    public function getGoogleReview()
+    {
+        $setting = $this->entityManager->getRepository(Setting::class)->findOneBy([]);
+        $googleMyBusiness = $setting->getGoogleMyBusiness();
+        if($googleMyBusiness === null){
+            return null;
+        }
+        return [
+            'rating' => $googleMyBusiness['result']['rating'],
+            'total_rating' => $googleMyBusiness['result']['user_ratings_total']
+        ];
     }
 }
