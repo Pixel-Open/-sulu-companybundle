@@ -13,30 +13,30 @@ class CompanyExtension extends Extension implements PrependExtensionInterface
 {
     use PersistenceExtensionTrait;
 
-    public function prepend(ContainerBuilder $container)
+    public function prepend(ContainerBuilder $container): void
     {
-        if($container->hasExtension("sulu_admin")){
+        if ($container->hasExtension("sulu_admin")) {
             $container->prependExtensionConfig(
                 "sulu_admin",
                 [
                     "forms" => [
                         "directories" => [
-                            __DIR__ . "/../Resources/config/forms"
-                        ]
+                            __DIR__ . "/../Resources/config/forms",
+                        ],
                     ],
                     "resources" => [
                         "company_settings" => [
                             "routes" => [
-                                "detail" => "company.get_company-settings"
-                            ]
-                        ]
-                    ]
+                                "detail" => "company.get_company-settings",
+                            ],
+                        ],
+                    ],
                 ]
             );
         }
     }
 
-    public function load(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);

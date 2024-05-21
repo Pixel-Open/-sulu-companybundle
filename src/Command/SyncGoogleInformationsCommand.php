@@ -20,14 +20,13 @@ class SyncGoogleInformationsCommand extends Command
         EntityManagerInterface $entityManager,
         HttpClientInterface $client,
         string $name = null
-    )
-    {
+    ) {
         $this->entityManager = $entityManager;
         $this->client = $client;
         parent::__construct($name);
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this->setHelp("Synchronizes the informations with the ones from Google");
     }
@@ -38,20 +37,20 @@ class SyncGoogleInformationsCommand extends Command
         $setting = $this->entityManager->getRepository(Setting::class)->findOneBy([]);
         $placeId = $setting->getPlaceId();
         $apiKey = $setting->getApiKey();
-        if($placeId){
+        if ($placeId) {
             $response = $this->client->request("GET", "https://maps.googleapis.com/maps/api/place/details/json", [
                 "query" => [
                     "placeid" => $placeId,
                     "fields" => "rating,opening_hours,user_ratings_total",
-                    "key" => $apiKey
-                ]
+                    "key" => $apiKey,
+                ],
             ]);
-            if($response->getStatusCode() === 200){
+            if ($response->getStatusCode() === 200) {
                 $content = $response->toArray();
-                if($content['status'] === "INVALID_REQUEST"){
+                if ($content['status'] === "INVALID_REQUEST") {
                     throw new \Exception("The place ID might not be correct. Please check it in the administration interface");
                 }
-                if($content['status'] === "REQUEST_DENIED") {
+                if ($content['status'] === "REQUEST_DENIED") {
                     throw new \Exception($content['error_message']);
                 }
                 $setting->setGoogleMyBusiness($content);
@@ -59,7 +58,7 @@ class SyncGoogleInformationsCommand extends Command
                 $this->entityManager->flush();
                 $output->writeln("<info>Synchronization ended sucessfully!</info>");
                 return self::SUCCESS;
-            }else{
+            } else {
                 $output->writeln("<error>An error occurs during the synchronisation</error>");
                 return self::FAILURE;
             }

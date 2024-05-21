@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.6.0 (21/05/2024)
+
++ Compatible Symfony 6 et Sulu 2.6
+
 ## 2.4.1 (09/06/2022)
 
 + Ajout du nombre total pour les avis Google

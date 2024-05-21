@@ -26,8 +26,7 @@ class SettingController extends AbstractRestController implements ClassResourceI
         ViewHandlerInterface $viewHandler,
         EntityManagerInterface $entityManager,
         ?TokenStorageInterface $tokenStorage = null
-    )
-    {
+    ) {
         $this->entityManager = $entityManager;
         parent::__construct($viewHandler, $tokenStorage);
     }
@@ -41,7 +40,7 @@ class SettingController extends AbstractRestController implements ClassResourceI
     public function putAction(Request $request): Response
     {
         $applicationSetting = $this->entityManager->getRepository(Setting::class)->findOneBy([]);
-        if(!$applicationSetting){
+        if (!$applicationSetting) {
             $applicationSetting = new Setting();
             $this->entityManager->persist($applicationSetting);
         }
@@ -50,6 +49,9 @@ class SettingController extends AbstractRestController implements ClassResourceI
         return $this->handleView($this->view($applicationSetting));
     }
 
+    /**
+     * @param array<mixed> $data
+     */
     public function mapDataToEntity(array $data, Setting $entity): void
     {
         $name = $data['name'] ?? null;

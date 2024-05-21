@@ -55,6 +55,7 @@ class Setting implements AuditableInterface
     /**
      * @ORM\Column(type="json", nullable=true)
      * @Serializer\Expose()
+     * @var array<mixed>|null
      */
     private ?array $address = null;
 
@@ -73,12 +74,14 @@ class Setting implements AuditableInterface
     /**
      * @ORM\Column(type="json", nullable=true)
      * @Serializer\Expose()
+     * @var array<string>|null
      */
     private ?array $openingHours = null;
 
     /**
      * @ORM\Column(type="json", nullable=true)
      * @Serializer\Expose()
+     * @var array<mixed>|null
      */
     private ?array $googleMyBusiness = null;
 
@@ -94,17 +97,11 @@ class Setting implements AuditableInterface
      */
     private ?string $aboutHours = null;
 
-    /**
-     * @return int|null
-     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
@@ -118,9 +115,6 @@ class Setting implements AuditableInterface
         $this->name = $name;
     }
 
-    /**
-     * @return string
-     */
     public function getEmail(): string
     {
         return $this->email;
@@ -134,9 +128,6 @@ class Setting implements AuditableInterface
         $this->email = $email;
     }
 
-    /**
-     * @return string
-     */
     public function getPhoneNumber(): string
     {
         return $this->phoneNumber;
@@ -150,24 +141,18 @@ class Setting implements AuditableInterface
         $this->phoneNumber = $phoneNumber;
     }
 
-    /**
-     * @return string|null
-     */
     public function getMobilePhoneNumber(): ?string
     {
         return $this->mobilePhoneNumber;
     }
 
-    /**
-     * @param string|null $mobilePhoneNumber
-     */
     public function setMobilePhoneNumber(?string $mobilePhoneNumber): void
     {
         $this->mobilePhoneNumber = $mobilePhoneNumber;
     }
 
     /**
-     * @return array
+     * @return array<mixed>
      */
     public function getAddress(): array
     {
@@ -175,47 +160,35 @@ class Setting implements AuditableInterface
     }
 
     /**
-     * @param array $address
+     * @param array<mixed>|null $address
      */
     public function setAddress(?array $address): void
     {
         $this->address = $address;
     }
 
-    /**
-     * @return string|null
-     */
     public function getPlaceId(): ?string
     {
         return $this->placeId;
     }
 
-    /**
-     * @param string|null $placeId
-     */
     public function setPlaceId(?string $placeId): void
     {
         $this->placeId = $placeId;
     }
 
-    /**
-     * @return string|null
-     */
     public function getApiKey(): ?string
     {
         return $this->apiKey;
     }
 
-    /**
-     * @param string|null $apiKey
-     */
     public function setApiKey(?string $apiKey): void
     {
         $this->apiKey = $apiKey;
     }
 
     /**
-     * @return array
+     * @return array<string>
      */
     public function getOpeningHours(): array
     {
@@ -223,7 +196,7 @@ class Setting implements AuditableInterface
     }
 
     /**
-     * @param array $openingHours
+     * @param array<string>|null $openingHours
      */
     public function setOpeningHours(?array $openingHours): void
     {
@@ -231,7 +204,7 @@ class Setting implements AuditableInterface
     }
 
     /**
-     * @return array|null
+     * @return array<mixed>|null
      */
     public function getGoogleMyBusiness(): ?array
     {
@@ -239,40 +212,28 @@ class Setting implements AuditableInterface
     }
 
     /**
-     * @param array|null $googleMyBusiness
+     * @param array<mixed>|null $googleMyBusiness
      */
     public function setGoogleMyBusiness(?array $googleMyBusiness): void
     {
         $this->googleMyBusiness = $googleMyBusiness;
     }
 
-    /**
-     * @return bool|null
-     */
     public function getUseGoogleHours(): ?bool
     {
         return $this->useGoogleHours;
     }
 
-    /**
-     * @param bool|null $useGoogleHours
-     */
     public function setUseGoogleHours(?bool $useGoogleHours): void
     {
         $this->useGoogleHours = $useGoogleHours;
     }
 
-    /**
-     * @return string|null
-     */
     public function getAboutHours(): ?string
     {
         return $this->aboutHours;
     }
 
-    /**
-     * @param string|null $aboutHours
-     */
     public function setAboutHours(?string $aboutHours): void
     {
         $this->aboutHours = $aboutHours;

@@ -16,8 +16,8 @@ use Sulu\Component\Security\Authorization\SecurityCheckerInterface;
 
 class SettingAdmin extends Admin
 {
-    const TAB_VIEW = "company.settings";
-    const FORM_VIEW = "company.settings.form";
+    public const TAB_VIEW = "company.settings";
+    public const FORM_VIEW = "company.settings.form";
 
     private ViewBuilderFactoryInterface $viewBuilderFactory;
     private SecurityCheckerInterface $securityChecker;
@@ -25,15 +25,14 @@ class SettingAdmin extends Admin
     public function __construct(
         ViewBuilderFactoryInterface $viewBuilderFactory,
         SecurityCheckerInterface $securityChecker
-    )
-    {
+    ) {
         $this->viewBuilderFactory = $viewBuilderFactory;
         $this->securityChecker = $securityChecker;
     }
 
     public function configureNavigationItems(NavigationItemCollection $navigationItemCollection): void
     {
-        if($this->securityChecker->hasPermission(Setting::SECURITY_CONTEXT, PermissionTypes::EDIT)){
+        if ($this->securityChecker->hasPermission(Setting::SECURITY_CONTEXT, PermissionTypes::EDIT)) {
             $navigationItem = new NavigationItem("company.settings");
             $navigationItem->setPosition(2);
             $navigationItem->setView(static::TAB_VIEW);
@@ -43,7 +42,7 @@ class SettingAdmin extends Admin
 
     public function configureViews(ViewCollection $viewCollection): void
     {
-        if($this->securityChecker->hasPermission(Setting::SECURITY_CONTEXT, PermissionTypes::EDIT)){
+        if ($this->securityChecker->hasPermission(Setting::SECURITY_CONTEXT, PermissionTypes::EDIT)) {
             $viewCollection->add(
                 $this->viewBuilderFactory->createResourceTabViewBuilder(static::TAB_VIEW, "/company-settings/:id")
                     ->setResourceKey(Setting::RESOURCE_KEY)
@@ -70,10 +69,10 @@ class SettingAdmin extends Admin
                 "Setting" => [
                     Setting::SECURITY_CONTEXT => [
                         PermissionTypes::VIEW,
-                        PermissionTypes::EDIT
-                    ]
-                ]
-            ]
+                        PermissionTypes::EDIT,
+                    ],
+                ],
+            ],
         ];
     }
 }

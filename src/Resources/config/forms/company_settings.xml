@@ -33,13 +33,13 @@
         <property name="placeId" type="text_line" colspan="6">
             <meta>
                 <title>company_settings.placeId</title>
-                <info_text>Le "place_id" est un identifiant unique donné par Google qui permet d'identifier un emplacement sur une carte.</info_text>
+                <info_text>company_settings.info_placeId</info_text>
             </meta>
         </property>
         <property name="apiKey" type="text_line" colspan="6">
             <meta>
                 <title>company_settings.apiKey</title>
-                <info_text>La clé de l'API de Google My Business qui permet d'accéder aux informations du compte.</info_text>
+                <info_text>company_settings.info_apiKey</info_text>
             </meta>
         </property>
         <property name="useGoogleHours" type="checkbox">
