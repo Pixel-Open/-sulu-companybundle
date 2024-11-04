@@ -1,16 +1,16 @@
 {
-  "name" : "pixeldev/sulu-companybundle",
+  "name" : "pixelopen/sulu-companybundle",
   "type": "sulu-bundle",
   "description": "Company tools for Sulu",
   "keywords": [
     "sulu",
-    "suluCms"
+    "sulu-bundle"
   ],
-  "homepage": "https://github.com/Pixel-Developpement/sulu-companybundle",
+  "homepage": "https://github.com/Pixel-Open/sulu-companybundle",
   "license": "MIT",
   "authors": [
     {
-      "name": "Pixel Developpement"
+      "name": "Pixel Open"
     }
   ],
   "require": {
