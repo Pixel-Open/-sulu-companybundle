@@ -14,7 +14,7 @@ A Sulu bundle to easily manage the company information.
 ## Requirements
 
 * PHP >= 8.0
-* Sulu >= 2.4.*
+* Sulu >= 2.5
 * Symfony >= 5.4
 
 ## Installation
