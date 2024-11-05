@@ -1,0 +1,129 @@
+<?xml version="1.0" ?>
+<form xmlns="http://schemas.sulu.io/template/template"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://schemas.sulu.io/template/template http://schemas.sulu.io/template/form-1.0.xsd"
+>
+    <key>company_settings</key>
+    <properties>
+        <property name="name" type="text_line">
+            <meta>
+                <title>company_settings.name</title>
+            </meta>
+        </property>
+        <property name="email" type="text_line" colspan="4">
+            <meta>
+                <title>company_settings.email</title>
+            </meta>
+        </property>
+        <property name="phoneNumber" type="text_line" colspan="4">
+            <meta>
+                <title>company_settings.phoneNumber</title>
+            </meta>
+        </property>
+        <property name="mobilePhoneNumber" type="text_line" colspan="4">
+            <meta>
+                <title>company_settings.mobilePhoneNumber</title>
+            </meta>
+        </property>
+        <property name="address" type="location">
+            <meta>
+                <title>company_settings.address</title>
+            </meta>
+        </property>
+        <property name="placeId" type="text_line" colspan="6">
+            <meta>
+                <title>company_settings.placeId</title>
+                <info_text>company_settings.info_placeId</info_text>
+            </meta>
+        </property>
+        <property name="apiKey" type="text_line" colspan="6">
+            <meta>
+                <title>company_settings.apiKey</title>
+                <info_text>company_settings.info_apiKey</info_text>
+            </meta>
+        </property>
+        <property name="useGoogleHours" type="checkbox">
+            <meta>
+                <title>company_settings.useGoogleHours</title>
+            </meta>
+        </property>
+        <property name="aboutHours" type="text_editor">
+            <meta>
+                <title>company_setting.aboutHours</title>
+            </meta>
+        </property>
+        <block name="openingHours" visibleCondition="useGoogleHours == false OR useGoogleHours == null">
+            <meta>
+                <title>company_settings.openingHours</title>
+            </meta>
+            <params>
+                <param name="add_button_text">
+                    <meta>
+                        <title>company_settings.addOpeningHour</title>
+                    </meta>
+                </param>
+            </params>
+            <types>
+                <type name="openingHour">
+                    <properties>
+                        <property name="day" type="single_select">
+                            <meta>
+                                <title>company_settings.day</title>
+                            </meta>
+                            <params>
+                                <param name="default_value" value="monday"/>
+                                <param name="values" type="collection">
+                                    <param name="monday">
+                                        <meta>
+                                            <title>company_settings.monday</title>
+                                        </meta>
+                                    </param>
+                                    <param name="tuesday">
+                                        <meta>
+                                            <title>company_settings.tuesday</title>
+                                        </meta>
+                                    </param>
+                                    <param name="wednesday">
+                                        <meta>
+                                            <title>company_settings.wednesday</title>
+                                        </meta>
+                                    </param>
+                                    <param name="thursday">
+                                        <meta>
+                                            <title>company_settings.thursday</title>
+                                        </meta>
+                                    </param>
+                                    <param name="friday">
+                                        <meta>
+                                            <title>company_settings.friday</title>
+                                        </meta>
+                                    </param>
+                                    <param name="saturday">
+                                        <meta>
+                                            <title>company_settings.saturday</title>
+                                        </meta>
+                                    </param>
+                                    <param name="sunday">
+                                        <meta>
+                                            <title>company_settings.sunday</title>
+                                        </meta>
+                                    </param>
+                                </param>
+                            </params>
+                        </property>
+                        <property name="openHour" type="time">
+                            <meta>
+                                <title>company_settings.openHour</title>
+                            </meta>
+                        </property>
+                        <property name="closeHour" type="time">
+                            <meta>
+                                <title>company_settings.closeHour</title>
+                            </meta>
+                        </property>
+                    </properties>
+                </type>
+            </types>
+        </block>
+    </properties>
+</form>

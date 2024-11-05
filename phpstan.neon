@@ -1,0 +1,8 @@
+parameters:
+    level: 6
+
+    paths:
+        - src
+
+    ignoreErrors:
+        - "#Offset '[a-zA-Z]+' does not exist on string#"
